@@ -2,6 +2,22 @@ import streamlit as st
 import pandas as pd
 from db import get_connection
 
+st.set_page_config(page_title="Watcher", layout="wide")
+
+SIDEBAR_STYLE = """
+<style>
+[data-testid="stSidebar"] {
+    min-width: 180px;
+    max-width: 180px;
+}
+[data-testid="stSidebarNav"] {
+    min-width: 180px;
+    max-width: 180px;
+}
+</style>
+"""
+
+st.markdown(SIDEBAR_STYLE, unsafe_allow_html=True)
 st.title("Watcher - Vendas")
 
 @st.cache_resource
