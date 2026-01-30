@@ -3,4 +3,4 @@ venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-notebooks/tests.ipynb
+supabase_schema.sql
