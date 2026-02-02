@@ -24,3 +24,13 @@ def query_view(view_name: str) -> pd.DataFrame:
     finally:
         conn.close()
     return df
+
+
+def query_sql(sql: str) -> pd.DataFrame:
+    """Executa uma query SQL e retorna um DataFrame."""
+    conn = get_connection()
+    try:
+        df = pd.read_sql(sql, conn)
+    finally:
+        conn.close()
+    return df

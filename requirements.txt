@@ -3,3 +3,6 @@ psycopg2-binary
 pandas
 plotly
 python-dotenv
+fastapi
+uvicorn
+httpx
