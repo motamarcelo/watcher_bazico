@@ -31,8 +31,7 @@ Dashboard de monitoramento de vendas e estoque integrado ao ERP Bling, construid
 │   ├── compras_vendas.py    # Pagina de estoque x vendas
 │   └── vendas_categoria.py  # Vendas por categoria (filtros hierarquicos)
 ├── docker/
-│   ├── dashboard.Dockerfile # Imagem do Streamlit
-│   └── sync.Dockerfile      # Imagem da API de sync
+│   └── dashboard.Dockerfile # Imagem do Streamlit
 ├── docker-compose.yml
 └── migrations/
     ├── 001_pedidos_compra.sql
@@ -95,14 +94,13 @@ uvicorn sync.api:app --reload
 
 ## Docker
 
-Para subir os dois servicos via Docker Compose:
+Para subir o dashboard via Docker Compose:
 
 ```bash
 docker compose up -d --build
 ```
 
-- **Dashboard:** http://localhost:8501
-- **API Sync:** http://localhost:8000
+O dashboard estara disponivel em http://localhost:8501
 
 Para parar:
 
@@ -110,4 +108,4 @@ Para parar:
 docker compose down
 ```
 
-O arquivo `.env` e carregado automaticamente pelos containers. O `bling_tokens.json` e montado como volume no servico de sync para persistir os tokens OAuth entre restarts.
+O arquivo `.env` e carregado automaticamente pelo container.

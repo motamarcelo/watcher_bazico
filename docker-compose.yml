@@ -8,15 +8,3 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-
-  sync:
-    build:
-      context: .
-      dockerfile: docker/sync.Dockerfile
-    ports:
-      - "8000:8000"
-    env_file:
-      - .env
-    volumes:
-      - ./bling_tokens.json:/app/bling_tokens.json
-    restart: unless-stopped
